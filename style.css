@@ -1,0 +1,147 @@
+
+/* in this css i have added little details to make my form look simple but clean */
+
+@import url('https://fonts.googleapis.com/css2?family=Glory:wght@100&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Glory', sans-serif;
+}
+
+body{
+    height: 100vh;
+	width: 100%;
+}
+
+.form_container{
+    position: relative;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px 50px;
+}
+/* I have added a ::after for the form_container to have an image display 
+behind the contact form having it filter blur */
+.form_container::after{
+    content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background: url("./bj_img.jpg") no-repeat center;
+	background-size: cover;
+	filter: blur(50px);
+	z-index: -1;
+}
+/* I have used grid instead of flex box, because it can be easily used 
+to make sections apear how you will like without much hassel */
+.form_container .contact_box{
+    width: 850px;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	background-color: #fff;
+	box-shadow: 0px 0px 19px 5px rgba(0,0,0,0.19);
+    border-radius: 5px;
+}
+/* I have added an image apart of the form to make it more appealing for
+for the eye, just to have some style instead of having a plain form */
+.form_container .contact_box .left{
+    background: url("./bj_img.jpg") no-repeat center;
+	background-size: cover;
+	height: 100%;
+    border-radius: 5px 0px 0px 5px;
+}
+/* to add some padding for the form section */
+.form_container .contact_box .right{
+    padding: 25px 40px;
+}
+/* styling for the h1 tag in the from_container */
+.form_container h1{
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #332902;
+}
+/* to space the input_field from the bottom */
+.form_container .contact_box .input_field{
+    margin-bottom: 20px;
+}
+/* i have styled input_fields and the textarea with the same style to keep 
+consistant */
+.form_container .contact_box .input_field input[type="text"],
+.form_container .contact_box textarea{
+    width: 100%;
+	border: 2px solid rgba(0, 0, 0, 0);
+	outline: none;
+	background-color: rgba(230, 230, 230, 0.6);
+	padding: 8px 16px;
+    border-radius: 5px;
+	font-size: 18px;
+	transition: .3s;
+}
+/* as the your able to resize the textarea, i have set it to resize vertical
+only, set the height to 80px in view and set the max height of the textarea 
+to 150px  */
+.form_container .contact_box textarea{
+    resize: vertical;
+    height: 80px;
+    max-height: 150px;
+}
+/* styling for the button */
+.form_container .contact_box .btn input[type="submit"]{
+    border: 0px;
+    margin-top: 15px;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    background: #b1b1b1;
+    color: #332902;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .3s;
+}
+/* hover affect for the button in the contact form */
+.form_container .contact_box .btn:hover [type="submit"]{
+    background-color: #53ee93;
+
+}
+/* i have added a error_message div box for when the user enters the wrong
+information, it will pop-up at the top of the contact form under the contact
+form header, the error_message is there purly for valudation*/
+#error_message{
+    margin-bottom: 20px;
+    background: #fe8b8e;
+    padding: 0px;
+    text-align: center;
+    font-size: 14px;
+    transition: all 0.5s ease;
+}
+
+/* media section, where i have set the contact_box grid-template-columns
+to 1fr to have in 1 column and set the height to 500px, to give a more
+mobile feel, i have commented out the left div section to display none 
+to not show the image, but if you like you can toggle the comment off/on 
+to see it in affect*/
+
+@media screen and (max-width: 640px){
+	.form_container .contact_box{
+		grid-template-columns: 1fr;
+        height: 500px;
+	}
+	.form_container .contact_box .left{
+        border-radius: 5px 5px 0px 0px;
+	}
+}

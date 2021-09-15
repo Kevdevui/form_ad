@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./tab_logo.svg">
+    <script src="app.js"></script>
+    <title>Contact Form</title>
+</head>
+<body>
+
+    <!-- I thought to go extra on the form, but I have kept it to a 
+    minimum, making it simple and clean. Below in the section is where 
+    I have used the appropriate tags, I have used divs with classes 
+    to define what each class is for. Form what you can see below, 
+    it explains it self, I have also added a tab logo just for extra 
+    glam-->
+    
+    <section class="form_container">
+
+        <div class="contact_box">
+    
+            <div class="left"></div>
+
+            <div class="right">
+                
+                <h1>Contact Form</h1>
+        
+                <div id="error_message"></div>
+        
+                <form id="myform" onsubmit="return validate()">
+                    <div class="input_field">
+                        <input type="text" placeholder="Full Name" id="full_name">
+                    </div>
+                    <div class="input_field">
+                        <input type="text" placeholder="Email" id="email">
+                    </div>
+                    <div class="input_field">
+                        <textarea id="message" placeholder="Message" onkeyup="charCount(this)"></textarea>
+                        <p> 
+                            <span id="textcount">0</span> 
+                            characters
+                        </p>
+                    </div>
+                    <div class="btn">
+                        <input type="submit">
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+        
+    </section>
+    
+</body>
+</html>
